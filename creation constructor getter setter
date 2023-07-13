@@ -1,0 +1,70 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+class Hero{
+   private:
+  int health;
+   string name;
+
+
+
+  public:
+  static int timeToComplete;
+  
+  
+  Hero(){
+      cout<<"constructor called "<<endl;
+  }
+  Hero(int health,string name){
+      cout<<"constructor with parameter "<<endl;
+      this->health=health;
+      this->name=name;
+  }
+  int getHealth(){
+      return health;
+  }
+  string getName(){
+      return name;
+  }
+  void setHealth(int h){
+      health=h;
+  }
+  void setName(string n){
+      name=n;
+  }
+};
+
+
+int Hero::timeToComplete=5;
+int main()
+{
+    Hero h1(80,"onkar");
+   Hero h2;
+   
+   
+   cout<<"timeToComplete :"<<Hero::timeToComplete<<endl;
+//   cout<<h1.health<<endl;
+    cout<<"Before set the value access private member (constructor parameter) :"<<endl;
+    cout<<h1.getHealth()<<endl;
+     cout<<h1.getName()<<endl;
+    h1.setHealth(70);
+    h1.setName("om");
+    cout<<"After set the value access private member"<<endl;
+    cout<<h1.getHealth()<<endl;
+     cout<<h1.getName()<<endl;
+     
+     cout<<endl<<"h2"<<endl;
+     h2=h1;
+cout<<h2.getHealth()<<endl;
+     cout<<h2.getName()<<endl;
+    return 0;
+}
